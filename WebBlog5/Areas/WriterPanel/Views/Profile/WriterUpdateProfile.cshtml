@@ -1,0 +1,55 @@
+﻿@model EntityLayer.Concrete.Writer
+@{
+    ViewData["Title"] = "WriterUpdateProfile";
+    Layout = "~/Areas/WriterPanel/Views/Shared/_WriterLayout.cshtml";
+}
+
+
+<div class="content-wrapper">
+    <div class="page-header">
+        <h3 class="page-title">
+            <span class="page-title-icon bg-gradient-primary text-white mr-2">
+                <i class="mdi mdi-settings"></i>
+            </span> Profil Güncəlləmə Paneli
+        </h3>
+    </div>
+
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Profilinizi güncəlləyin</h4>
+                @using (Html.BeginForm("WriterUpdateProfile", "Profile", FormMethod.Post))
+                {
+                    <div class="form-group">
+                        @Html.HiddenFor(x=>x.ID, new {@class="form-control"})
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputName1">Adınız</label>
+                        <br>
+                        @Html.ValidationMessageFor(x=>x.Name ,"", new {@class="errormessage"})
+                        @Html.TextBoxFor(x=>x.Name, new {@class="form-control"})
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputName1">Soyadınız</label>
+                        <br>
+                        @Html.ValidationMessageFor(x=>x.Mail ,"", new {@class="errormessage"})
+                        @Html.TextBoxFor(x=>x.Mail, new {@class="form-control"})
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputName1">Şifrəniz</label>
+                        <br>
+                        @Html.ValidationMessageFor(x=>x.Password ,"", new {@class="errormessage"})
+                        @Html.PasswordFor(x=>x.Password, new {@class="form-control"})
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputName1">Haqqınızda</label>
+                        <br>
+                        @Html.TextAreaFor(x=>x.About,15,3, new {@class="form-control"})
+                    </div>
+                    <button class="btn btn-gradient-primary mr-2">Güncəllə</button>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

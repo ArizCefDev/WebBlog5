@@ -1,0 +1,18 @@
+﻿@using EntityLayer.Concrete
+@model List<Writer>
+
+<li class="nav-item nav-profile">
+    <a href="#" class="nav-link">
+        @foreach (var item in Model)
+        {
+            <div class="nav-profile-image">
+                <img src="@item.Image" alt="profile">
+                <span class="login-status online"></span>
+            </div>
+            <div class="nav-profile-text d-flex flex-column">
+                <span class="font-weight-bold mb-2">@item.Name</span>
+                <span class="text-secondary text-small">@item.Mail</span>
+            </div>
+        }
+    </a>
+</li>

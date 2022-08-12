@@ -1,0 +1,23 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Comment>
+@{
+    ViewData["Title"] = "CommentDetails";
+    Layout = "~/Views/Shared/_PagesLayout.cshtml";
+}
+
+<div class="comment-top">
+    <h4>Yorumlar</h4>
+    <br />
+    @foreach (var item in Model)
+    {
+        <div class="media">
+            <img src="~/webCore/images/iconuserc.png" alt="" class="img-fluid" />
+            <div class="media-body">
+                <h5 class="mt-0">@item.UserName</h5>
+                <p>
+                    @item.Content
+                </p>
+            </div>
+        </div>
+    }
+</div>
+

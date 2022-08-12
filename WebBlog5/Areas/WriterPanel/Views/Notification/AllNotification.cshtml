@@ -1,0 +1,52 @@
+﻿@using EntityLayer.Concrete
+@model IEnumerable<Notification>
+@{
+    ViewData["Title"] = "AllNotification";
+    Layout = "~/Areas/WriterPanel/Views/Shared/_WriterLayout.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="page-header">
+        <h3 class="page-title">
+            <span class="page-title-icon bg-gradient-primary text-white mr-2">
+                <i class="mdi mdi-bell-outline"></i>
+            </span> Bildiriş Paneli
+        </h3>
+    </div>
+
+    <!--Table-->
+    <div class="row">
+        <div class="col-12 grid-margin">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Sizin bildirişləriniz</h4>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th> # </th>
+                                    <th> Başlıq </th>
+                                    <th> Açıqlama </th>
+                                    <th> Tarix </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td> @item.ID </td>
+                                        <td> 
+                                            <label class="badge badge-gradient-success">@item.Type</label>
+                                        </td>
+                                        <td> @item.Details </td>
+                                        <td> @(((DateTime)item.Date).ToString("dd-MMM-yyyy")) </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

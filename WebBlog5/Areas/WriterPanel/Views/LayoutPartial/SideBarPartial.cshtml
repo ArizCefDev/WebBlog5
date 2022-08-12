@@ -1,0 +1,48 @@
+﻿
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <ul class="nav">
+        @await Component.InvokeAsync("SideWriterProfile")
+        <li class="nav-item">
+            <a class="nav-link" href="/WriterPanel/Writer/Index/">
+                <span class="menu-title">Profilim</span>
+                <i class="mdi mdi-account menu-icon"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/WriterPanel/Writer/MyBlogDetails/">
+                <span class="menu-title">Bloglarım</span>
+                <i class="mdi mdi-blogger menu-icon"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/WriterPanel/Blog/BlogAdd/">
+                <span class="menu-title">Yeni Blog</span>
+                <i class="mdi mdi-download menu-icon"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/WriterPanel/Notification/AllNotification/">
+                <span class="menu-title">Bildirişlər</span>
+                <i class="mdi mdi-bell-outline menu-icon"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/WriterPanel/Profile/WriterUpdateProfile/">
+                <span class="menu-title">Parametrlər</span>
+                <i class="mdi mdi-settings menu-icon"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/Default/Index/">
+                <span class="menu-title">Sayta get</span>
+                <i class="mdi mdi-swap-horizontal menu-icon"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/Login/LogOut/">
+                <span class="menu-title">Çıxış</span>
+                <i class="mdi mdi-transfer-right menu-icon"></i>
+            </a>
+        </li>
+    </ul>
+</nav>

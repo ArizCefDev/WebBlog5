@@ -1,0 +1,35 @@
+﻿@model EntityLayer.Concrete.Category
+@{
+    ViewData["Title"] = "AddCategory";
+    Layout = "~/Areas/AdminPanel/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Yeni Kateqoriya əlavə et</h2>
+    </div>
+    <div class="col-lg-2">
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            @using (Html.BeginForm("AddCategory", "Category", FormMethod.Post))
+            {
+                <div class="form-group  row">
+                    <label class="col-sm-2 col-form-label">Kateqoriya adı</label>
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(x=>x.Name," ",new {@class="form-control"})
+                        @Html.ValidationMessageFor(x=>x.Name,"",new {@class="errormessage"})
+                    </div>
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="form-group row">
+                    <div class="col-sm-4 col-sm-offset-2">
+                        <button class="btn btn-success btn-sm" type="submit">Əlavə et</button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

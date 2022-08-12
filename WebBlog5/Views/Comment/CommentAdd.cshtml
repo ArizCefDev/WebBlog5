@@ -1,0 +1,36 @@
+﻿@model EntityLayer.Concrete.Comment
+@{
+    ViewData["Title"] = "CommentAdd";
+    Layout = "~/Views/Shared/_PagesLayout.cshtml";
+}
+
+<div class="comment-top">
+    <h4 class="comhead">Yorum əlavə edin</h4>
+    <div class="comment-bottom">
+        @using (Html.BeginForm("CommentAdd", "Comment", FormMethod.Post))
+        {
+            <b>Gmail adresiniz</b>
+            <br />
+            @Html.ValidationMessageFor(x=>x.UserName ,"", new {@class="errormessagecomment"})
+            <br />
+            @Html.TextBoxFor(x=>x.UserName," ", new {@class="commenttextbox"})
+
+            <br />
+            <b>Başlıq</b>
+            <br />
+            @Html.ValidationMessageFor(x=>x.Title ,"", new {@class="errormessagecomment"})
+            <br />
+            @Html.TextBoxFor(x=>x.Title," ", new {@class="commenttextbox"})
+
+            <br />
+            <b>Açıqlama</b>
+            <br />
+            @Html.ValidationMessageFor(x=>x.Content ,"", new {@class="errormessagecomment"})
+            <br />
+            @Html.TextAreaFor(x=>x.Content,7,3, new {@class="commenttextbox"})
+            <br />
+            <button type="submit" id="btncomment" class="btn btn-primary submit">Əlavə et</button>
+        }
+    </div>
+</div>
+

@@ -1,0 +1,47 @@
+﻿@model EntityLayer.Concrete.Blog
+@{
+    ViewData["Title"] = "BlogUpdate";
+    Layout = "~/Areas/WriterPanel/Views/Shared/_WriterLayout.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="page-header">
+        <h3 class="page-title">
+            <span class="page-title-icon bg-gradient-primary text-white mr-2">
+                <i class="mdi mdi-backup-restore"></i>
+            </span> Bloq Güncəllə Paneli
+        </h3>
+    </div>
+
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Bloqu güncəllə</h4>
+                @using (Html.BeginForm("BlogUpdate", "Blog", FormMethod.Post))
+                {
+                    <div class="form-group">
+                        @Html.HiddenFor(x=>x.ID, new {@class="form-control"})
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputName1">Bloq başlığı</label>
+                        <br>
+                        @Html.ValidationMessageFor(x=>x.Title ,"", new {@class="errormessage"})
+                        @Html.TextBoxFor(x=>x.Title, new {@class="form-control"})
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputName1">Kategoriya adı</label>
+                        @Html.DropDownListFor(x=>x.CategoryID,(List<SelectListItem>) ViewBag.ctv, new {@class="form-control"})
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputName1">Bloq açıqlaması</label>
+                        <br>
+                        @Html.ValidationMessageFor(x=>x.Content ,"", new {@class="errormessage"})
+                        @Html.TextAreaFor(x=>x.Content,15,3, new {@class="form-control"})
+                    </div>
+                    <button class="btn btn-gradient-primary mr-2">Güncəllə</button>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,58 @@
+﻿@model EntityLayer.Concrete.About
+@{
+    ViewData["Title"] = "AboutUpdate";
+    Layout = "~/Areas/AdminPanel/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Haqqımızda Güncəllə</h2>
+    </div>
+    <div class="col-lg-2">
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            @using (Html.BeginForm("AboutUpdate", "About", FormMethod.Post))
+            {
+                <div class="form-group  row">
+                    <div class="col-sm-10">
+                        @Html.HiddenFor(x=>x.ID, new {@class="form-control"})
+                    </div>
+                </div>
+                <div class="form-group  row">
+                    <label class="col-sm-2 col-form-label">Haqqımızda şəkili</label>
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(x=>x.image1, new {@class="form-control"})
+                    </div>
+                </div>
+                <div class="form-group  row">
+                    <label class="col-sm-2 col-form-label">Haqqımızda adı</label>
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(x=>x.Details1, new {@class="form-control"})
+                        @Html.ValidationMessageFor(x=>x.Details1,"",new {@class="errormessage"})
+                    </div>
+                </div>
+                <div class="form-group  row">
+                    <label class="col-sm-2 col-form-label">Haqqımızda açıqlaması</label>
+                    <div class="col-sm-10">
+                        @Html.TextAreaFor(x=>x.Details2,15,3, new {@class="form-control"})
+                        @Html.ValidationMessageFor(x=>x.Details2,"",new {@class="errormessage"})
+                    </div>
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="form-group row">
+                    <div class="col-sm-4 col-sm-offset-2">
+                        <button class="btn btn-primary btn-sm" type="submit">Güncəllə</button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+
+

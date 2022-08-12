@@ -1,0 +1,39 @@
+﻿@using EntityLayer.Concrete
+@model List<Contact>
+
+<li class="dropdown">
+    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+        <i class="fa fa-envelope"></i>  <span class="label label-warning">Yeni</span>
+    </a>
+    <ul class="dropdown-menu dropdown-messages">
+        @foreach (var item in Model)
+        {
+            <li>
+                <div class="dropdown-messages-box">
+                    <a class="dropdown-item float-left" href="/AdminPanel/Message/MessageUpdate/@item.ID">
+                        <img alt="image" class="rounded-circle" src="~/webWriter/assets/images/writerimg.png">
+                    </a>
+                    <div class="media-body">
+                        <strong>@item.Mail</strong> dan
+                        <br />
+                        <a href="/AdminPanel/Message/MessageUpdate/@item.ID">
+                            <strong>@item.UserName</strong> bir mesaj göndərdi
+                        </a>
+                        <br />
+                        <strong>@item.Subject</strong>
+                        <br />
+                        <small class="text-muted">@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</small>
+                    </div>
+                </div>
+            </li>
+        }
+        <li class="dropdown-divider"></li>
+        <li>
+            <div class="text-center link-block">
+                <a href="/AdminPanel/Message/Index/" class="dropdown-item">
+                    <i class="fa fa-envelope"></i> <strong>Bütün mesajları oxu</strong>
+                </a>
+            </div>
+        </li>
+    </ul>
+</li>

@@ -1,0 +1,50 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Istifadeci Paneli</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="~/webWriter/assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="~/webWriter/assets/vendors/css/vendor.bundle.base.css">
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="~/webWriter/assets/css/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="~/favIcon/weblogo.png" type="image/x-icon" />
+</head>
+<body>
+    <div class="container-scroller">
+
+        <!-- NavBar -->
+        @await Html.PartialAsync("/Areas/WriterPanel/Views/LayoutPartial/HeaderPartial.cshtml")
+
+        <div class="container-fluid page-body-wrapper">
+
+            <!--SideBar -->
+            @await Html.PartialAsync("/Areas/WriterPanel/Views/LayoutPartial/SideBarPartial.cshtml")
+
+            <!-- partial -->
+            <div class="main-panel">
+                @RenderBody()
+
+                <!-- footer -->
+                @await Html.PartialAsync("/Areas/WriterPanel/Views/LayoutPartial/FooterPartial.cshtml")
+
+            </div>
+        </div>
+    </div>
+    <script src="~/webWriter/assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="~/webWriter/assets/vendors/chart.js/Chart.min.js"></script>
+    <script src="~/webWriter/assets/js/off-canvas.js"></script>
+    <script src="~/webWriter/assets/js/hoverable-collapse.js"></script>
+    <script src="~/webWriter/assets/js/misc.js"></script>
+    <script src="~/webWriter/assets/js/dashboard.js"></script>
+    <script src="~/webWriter/assets/js/todolist.js"></script>
+</body>
+</html>
